@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto%3Awght%40100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body style="background-color: #c9b39a">
+    <div
+      data-pencil-name="Agent Dashboard — Dot Matrix"
+      style="background-color: #c9b39a; background-image: radial-gradient(ellipse 80% 75% at 35% 30%, #fff3dd80 0%, #ffffff00 45%, #2e201080 100%); background-repeat: no-repeat; background-size: 100% 100%; box-sizing: border-box; height: 620px; overflow: hidden; position: relative; width: 620px"
+    >
+      <div
+        data-pencil-name="Device"
+        style="align-items: flex-start; background-color: #0c0c0f; border-radius: 26px; border: 2px solid #1e1e24; box-shadow: 2px 5px 12px 0px #00000038, 14px 22px 48px 2px #00000045; box-sizing: border-box; display: flex; flex-direction: column; gap: 0px; height: 460px; justify-content: flex-start; left: 80px; overflow: hidden; padding: 28px 32px; position: absolute; top: 80px; width: 460px; z-index: 0"
+      >
+        <div
+          data-pencil-name="Screen Content"
+          style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex: 1 1 0; gap: 0px; justify-content: space-between; position: relative; width: 100%; z-index: 0"
+        >
+          <div
+            data-pencil-name="Header Block"
+            style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 10px; height: fit-content; justify-content: flex-start; width: 100%"
+          >
+            <div
+              data-pencil-name="Header Row"
+              style="align-items: center; box-sizing: border-box; display: flex; flex-direction: row; flex-shrink: 0; gap: 14px; height: fit-content; justify-content: flex-start; width: fit-content"
+            >
+              <div
+                data-pencil-name="Page Index"
+                style="box-sizing: border-box; color: #5b5b64; font-family: Doto, system-ui, sans-serif; font-size: 16px; font-style: normal; font-weight: 700; letter-spacing: 0px; line-height: normal; text-align: left; white-space: nowrap"
+              >
+                02
+              </div>
+              <div
+                data-pencil-name="Title"
+                style="box-sizing: border-box; color: #cfcfcc; filter: drop-shadow(0px 0px 4px #ffffff2b); font-family: Doto, system-ui, sans-serif; font-size: 16px; font-style: normal; font-weight: 700; letter-spacing: 0px; line-height: normal; text-align: left; white-space: nowrap"
+              >
+                CLAUDE / CODEX
+              </div>
+            </div>
+            <div
+              data-pencil-name="Tokens Value"
+              style="box-sizing: border-box; color: #eaeae7; filter: drop-shadow(0px 0px 7px #ffffff33); font-family: Doto, system-ui, sans-serif; font-size: 80px; font-style: normal; font-weight: 800; letter-spacing: 2px; line-height: normal; text-align: left; white-space: nowrap"
+            >
+              12.4K
+            </div>
+            <div
+              data-pencil-name="Tokens Label"
+              style="box-sizing: border-box; color: #8f8f98; font-family: Doto, system-ui, sans-serif; font-size: 16px; font-style: normal; font-weight: 700; letter-spacing: 0px; line-height: normal; text-align: left; white-space: nowrap"
+            >
+              TOKENS
+            </div>
+          </div>
+          <div
+            data-pencil-name="Histogram"
+            style="align-items: flex-end; box-sizing: border-box; display: flex; flex-direction: row; flex-shrink: 0; gap: 0px; height: fit-content; justify-content: space-between; width: 100%"
+          >
+            <div
+              data-pencil-name="Col 1"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 2"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 3"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 4"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 5"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 6"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 7"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 8"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 9"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 10"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 11"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 12"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 13"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 14"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 15"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 16"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #eaeae7; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 17"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot off"
+                style="background-color: #1c1c22; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Col 18"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 12.7px; height: fit-content; justify-content: flex-end; width: fit-content"
+            >
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+              <div
+                data-pencil-name="Dot"
+                style="background-color: #ff4d1f; border-radius: 50%; box-sizing: border-box; flex-shrink: 0; height: 10px; width: 10px"
+              ></div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Bottom Row"
+            style="align-items: flex-end; box-sizing: border-box; display: flex; flex-direction: row; flex-shrink: 0; gap: 0px; height: fit-content; justify-content: space-between; width: 100%"
+          >
+            <div
+              data-pencil-name="Requests"
+              style="align-items: flex-start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 10px; height: fit-content; justify-content: flex-start; width: fit-content"
+            >
+              <div
+                data-pencil-name="Requests Label"
+                style="box-sizing: border-box; color: #8f8f98; font-family: Doto, system-ui, sans-serif; font-size: 16px; font-style: normal; font-weight: 700; letter-spacing: 0px; line-height: normal; text-align: left; white-space: nowrap"
+              >
+                REQUESTS
+              </div>
+              <div
+                data-pencil-name="Requests Value"
+                style="box-sizing: border-box; color: #eaeae7; font-family: Doto, system-ui, sans-serif; font-size: 38px; font-style: normal; font-weight: 800; letter-spacing: 0px; line-height: normal; text-align: left; white-space: nowrap"
+              >
+                24
+              </div>
+            </div>
+            <div
+              data-pencil-name="Delta Badge"
+              style="align-items: center; border-radius: 100px; border: 2px solid #ff4d1f; box-shadow: 0px 0px 12px 0px #ff4d1f40; box-sizing: border-box; display: flex; flex-direction: row; flex-shrink: 0; gap: 0px; height: fit-content; justify-content: center; padding: 10px 18px; width: fit-content"
+            >
+              <div
+                data-pencil-name="Delta"
+                style="box-sizing: border-box; color: #ff4d1f; font-family: Doto, system-ui, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; letter-spacing: 0px; line-height: normal; text-align: left; white-space: nowrap"
+              >
+                +18%
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-pencil-name="Gloss"
+          style="background-image: radial-gradient(ellipse 75% 55% at 15% 8%, #ffffff1c 0%, #ffffff00 70%); background-repeat: no-repeat; background-size: 100% 100%; box-sizing: border-box; height: 460px; left: 0px; position: absolute; top: 0px; width: 460px; z-index: 1"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
