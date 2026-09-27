@@ -1,0 +1,89 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "EMgv4",
+          "x": -209.94017946161517,
+          "y": -59,
+          "name": "Dot Grid — Pinpoint",
+          "width": "fit_content(1000)",
+          "height": "fit_content(670)",
+          "fill": {
+            "type": "shader",
+            "enabled": true,
+            "url": "geo-pattern.glsl",
+            "uniforms": {
+              "u_shape": 0,
+              "u_cellSize": 30,
+              "u_shapeFill": 0.12,
+              "u_strokeWidth": 0,
+              "u_rotation": 0,
+              "u_stagger": 0,
+              "u_gap": 0,
+              "u_background": "#05060a",
+              "u_shapeColor": "#33405e",
+              "u_highlightRadius": 140,
+              "u_highlightSize": 4,
+              "u_repulsion": 100,
+              "u_highlightColor": "#7df9ff"
+            }
+          },
+          "layout": "none"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "FJMHw",
+      "x": 872,
+      "y": 0,
+      "name": "Weave",
+      "width": "fit_content(640)",
+      "height": "fit_content(419)",
+      "fill": {
+        "type": "shader",
+        "enabled": true,
+        "url": "silk.glsl",
+        "uniforms": {
+          "u_color1": "#241830",
+          "u_color2": "#7a3142",
+          "u_color3": "#c98a4b",
+          "u_color4": "#e7c79a",
+          "u_patternAngle": 45,
+          "u_patternDetail": 0.4,
+          "u_patternSwirl": 1.2,
+          "u_patternSpeed": 0.03,
+          "u_slideSpeed": 0.03,
+          "u_slideAngle": 90,
+          "u_stripeAngle": 90,
+          "u_stripeWidth": 34,
+          "u_bend": 80,
+          "u_sharpness": 28,
+          "u_colorSplit": 0.2,
+          "u_calmAmount": 1,
+          "u_calmStrength": 1,
+          "u_calmSize": 2,
+          "u_calmSpeed": 0.5,
+          "u_grain": 0.05,
+          "u_twirlAmount": 0,
+          "u_twirlRadius": 1.2
+        }
+      },
+      "layout": "none"
+    }
+  ],
+  "fileToken": "2bc24bb9-4f9b-414a-b309-9e88e3476524"
+}
