@@ -26,7 +26,6 @@
   .dial { position:relative; width:320px; height:320px; }
   .dial .dot { position:absolute; border-radius:50%; }
   .ring-dot { width:4px; height:4px; }
-  .spoke-dot { width:3px; height:3px; background:#1d1d26; }
   .score-svg { position:absolute; left:0; top:0; width:320px; height:320px; z-index:5; pointer-events:none; }
   .score-path { fill:#ffffff08; stroke:#eaeae7; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;
     filter:drop-shadow(0 0 5px rgba(255,255,255,.18)); }
@@ -135,10 +134,6 @@ function renderDynamic(){
     const a=angleOf(i), ca=Math.cos(a), sa=Math.sin(a);
     if(it.score!==null){
       const r=CFG.ri+it.score*S;
-      for(let rr=54; rr<r-10; rr+=9){
-        const d=el("div","dot spoke-dot",dial);
-        d.style.left=(CX+rr*ca-1.5)+"px"; d.style.top=(CY+rr*sa-1.5)+"px";
-      }
       scored.push([CX+r*ca, CY+r*sa]);
       const st=dotStyle(it.score), d=el("div","dot score-dot",dial);
       d.style.background=st.c; d.style.width=st.s+"px"; d.style.height=st.s+"px";

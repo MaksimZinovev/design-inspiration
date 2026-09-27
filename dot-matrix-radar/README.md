@@ -11,7 +11,7 @@ A LED radar dial: each scoring criterion is a dot on a spoke — **distance from
 
 ## Geometry (shared by canvas + HTML)
 - Dial 320×320, center (160,160); radius scale `r = RI + score*S` with **RI 44, S 5.6** (outer ring 100)
-- Guide rings (dotted) at scores 2.5/5/7.5/10 → r 58/72/86/100; faint spokes from r 54 to each dot
+- Guide rings (dotted) at scores 2.5/5/7.5/10 → r 58/72/86/100
 - 11 criteria at angles `-90° + i*(360/11)`; labels rotated radially, **text center on the spoke at radius 135** (all same radius): right half reads outward, left half reads inward (never upside-down)
 - Score dots 12px (14px + halo for score ≤5); colors: ≥8 `#eaeae7`, 6–7 `#cfcfcc`, ≤5 `#ff4d1f`, unknown `#3f3f4a`
 - Score line: closed SVG polygon through scored dots — canvas: 2px `$led`, soft glow, subtle `#ffffff08` fill, **under** the dots; HTML: same but layered **above** the dots (labels + hub stay on top)
