@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dot-Matrix Widgets — Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px;
+    background-color:#c9b39a;
+    background-image:radial-gradient(ellipse 80% 75% at 35% 30%, #fff3dd80 0%, #ffffff00 45%, #2e201080 100%);
+    font-family:'Doto',system-ui,sans-serif; }
+  .device { width:560px; max-width:100%; background:#0c0c0f; border-radius:26px; border:2px solid #1e1e24; padding:36px 40px;
+    box-shadow:2px 5px 12px 0px #00000038, 14px 22px 48px 0px #00000045; position:relative; overflow:hidden; }
+  .gloss { position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(ellipse 75% 55% at 15% 8%, #ffffff1c 0%, #ffffff00 70%); }
+  .idx { display:inline-block; border:1px solid #2a2a32; border-radius:4px; padding:2px 7px; color:#5b5b64; font-size:14px; font-weight:700; }
+  h1 { margin:14px 0 4px; color:#eaeae7; font-size:30px; font-weight:800; letter-spacing:1px; text-shadow:0 0 12px #ffffff33; }
+  .sub { color:#8f8f98; font-size:13px; font-weight:700; margin-bottom:28px; }
+  a.card { display:block; text-decoration:none; border:2px solid #26262e; border-radius:14px; padding:18px 20px; margin-bottom:14px; position:relative; z-index:1; }
+  a.card.live { border-color:#ff4d1f; box-shadow:0 0 12px #ff4d1f40; }
+  .card .t { color:#eaeae7; font-size:18px; font-weight:800; letter-spacing:1px; }
+  a.card.live .t { text-shadow:0 0 8px #ffffff40; }
+  .card .d { color:#8f8f98; font-size:12px; font-weight:700; margin-top:6px; line-height:1.5; }
+  .card .go { color:#ff4d1f; font-size:12px; font-weight:700; margin-top:10px; letter-spacing:1px; }
+  .card.soon .t { color:#5b5b64; } .card.soon .d { color:#4a4a52; }
+  .card .soon-badge { float:right; color:#5b5b64; font-size:11px; font-weight:700; border:1px solid #26262e; border-radius:100px; padding:3px 10px; }
+  .foot { color:#5b5b64; font-size:11px; font-weight:700; margin-top:20px; position:relative; z-index:1; }
+</style>
+</head>
+<body>
+  <div class="device">
+    <span class="idx">00</span>
+    <h1>DOT-MATRIX WIDGETS</h1>
+    <div class="sub">PIXEL-LED DESIGN STUDY — LIVE DEMOS</div>
+    <a class="card live" href="radar/">
+      <div class="t">03 · JOB SCORECARD — RADAR DIAL</div>
+      <div class="d">Parametric dot-matrix radar: edit any score and the dot, the connecting line and the total re-render live.</div>
+      <div class="go">OPEN ▸</div>
+    </a>
+    <a class="card soon">
+      <span class="soon-badge">SOON</span>
+      <div class="t">01 · TOKENS — HISTOGRAM</div>
+      <div class="d">Dot-matrix histogram counter panel.</div>
+    </a>
+    <a class="card soon">
+      <span class="soon-badge">SOON</span>
+      <div class="t">02 · AGENT STATUS — THINKING</div>
+      <div class="d">Thinking-state display with dotted face and waveform.</div>
+    </a>
+    <div class="foot">DESIGNED IN PEN.DEV · SOURCES IN /MAIN</div>
+    <div class="gloss"></div>
+  </div>
+</body>
+</html>

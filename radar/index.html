@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Job Scorecard — Dot Matrix Radar (Parametric)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; padding:30px 0; background:#c9b39a; font-family:'Doto',system-ui,sans-serif; }
+  .stage { position:relative; width:620px; height:620px; flex-shrink:0;
+    background-color:#c9b39a;
+    background-image:radial-gradient(ellipse 80% 75% at 35% 30%, #fff3dd80 0%, #ffffff00 45%, #2e201080 100%); }
+  .device { position:absolute; left:80px; top:80px; width:460px; height:460px; background:#0c0c0f;
+    border-radius:26px; border:2px solid #1e1e24; overflow:hidden;
+    box-shadow:2px 5px 12px 0px #00000038, 14px 22px 48px 0px #00000045; }
+  .screen { position:absolute; left:30px; top:26px; right:30px; bottom:26px; display:flex; flex-direction:column; justify-content:space-between; }
+  .header-row { display:flex; justify-content:space-between; align-items:center; }
+  .header-left { display:flex; gap:14px; align-items:center; }
+  .page-index { border:1px solid #2a2a32; border-radius:4px; padding:2px 7px; color:#5b5b64; font-size:16px; font-weight:700; }
+  .title { color:#cfcfcc; font-size:16px; font-weight:700; text-shadow:0 0 4px #ffffff2b; }
+  .badge { border:2px solid #ff4d1f; border-radius:100px; padding:7px 14px; color:#ff4d1f; font-size:16px; font-weight:700; box-shadow:0 0 12px #ff4d1f40; }
+  .radial-wrap { display:flex; justify-content:center; }
+  .dial { position:relative; width:320px; height:320px; }
+  .dial .dot { position:absolute; border-radius:50%; }
+  .ring-dot { width:4px; height:4px; }
+  .score-svg { position:absolute; left:0; top:0; width:320px; height:320px; z-index:5; pointer-events:none; }
+  .score-path { fill:#ffffff08; stroke:#eaeae7; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;
+    filter:drop-shadow(0 0 4px rgba(255,255,255,.4)) drop-shadow(0 0 10px rgba(255,255,255,.22)); }
+  .label { position:absolute; font-size:11px; font-weight:700; color:#5b5b64; white-space:nowrap; line-height:16px; z-index:6; }
+  .label.risk { color:#ff4d1f; }
+  .hub { position:absolute; left:160px; top:150px; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; z-index:6; }
+  .hub-value { font-size:44px; font-weight:800; color:#eaeae7; text-shadow:0 0 12px #ffffff33; line-height:1; }
+  .legend { display:flex; justify-content:space-between; align-items:center; }
+  .legend-item { display:flex; gap:8px; align-items:center; color:#8f8f98; font-size:12px; font-weight:700; }
+  .legend-dot { width:8px; height:8px; border-radius:50%; }
+  .gloss { position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(ellipse 75% 55% at 15% 8%, #ffffff1c 0%, #ffffff00 70%); }
+  .panel { width:620px; background:#141419; border:1px solid #26262e; border-radius:14px; padding:18px 22px 20px; }
+  .panel h2 { margin:0 0 12px; font-size:14px; font-weight:700; color:#8f8f98; letter-spacing:1px; }
+  .rows { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:22px; row-gap:9px; }
+  .row { display:flex; align-items:center; gap:8px; min-width:0; }
+  .row .name { width:78px; flex-shrink:0; font-size:11px; font-weight:700; color:#8f8f98; }
+  .row input[type=range] { flex:1; min-width:0; accent-color:#ff4d1f; height:14px; }
+  .row input[type=range]:disabled { opacity:.35; }
+  .row .val { width:26px; text-align:right; font-size:13px; font-weight:800; color:#eaeae7; }
+  .row .unk { display:flex; align-items:center; gap:4px; flex-shrink:0; font-size:10px; color:#5b5b64; cursor:pointer; }
+  .row input[type=checkbox] { accent-color:#ff4d1f; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="device">
+      <div class="screen">
+        <div class="header-row">
+          <div class="header-left">
+            <div class="page-index">04</div>
+            <div class="title">JOB SCORECARD</div>
+          </div>
+          <div class="badge">PROMOTE</div>
+        </div>
+        <div class="radial-wrap">
+          <div class="dial" id="dial">
+            <svg class="score-svg" viewBox="0 0 320 320"><path class="score-path" id="scorePath" d=""/></svg>
+            <div class="hub"><div class="hub-value" id="hubValue">7.4</div></div>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#eaeae7"></span>STRONG</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#cfcfcc"></span>MID</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#ff4d1f"></span>RISK</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#3f3f4a"></span>UNKNOWN</div>
+        </div>
+      </div>
+      <div class="gloss"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>SCORES — EDIT LIVE</h2>
+    <div class="rows" id="rows"></div>
+  </div>
+
+<script>
+const CFG = {
+  ri: 44, ro: 100,
+  scores: [
+    { label:"SALARY",  score:6 },
+    { label:"JOB TYPE",score:10 },
+    { label:"SIZE",    score:9 },
+    { label:"CULTURE", score:7 },
+    { label:"LOC",     score:7 },
+    { label:"ROLES",   score:8 },
+    { label:"TECH",    score:9 },
+    { label:"AI",      score:1 },
+    { label:"SENIOR",  score:9 },
+    { label:"TEAM",    score:8 },
+    { label:"ONSITE",  score:null },
+  ]
+};
+
+const CX=160, CY=160, LABEL_R=135, RING_SCORES=[2.5,5,7.5,10];
+const S=(CFG.ro-CFG.ri)/10;
+const TAU=Math.PI*2;
+const angleOf=i=>(-90+i*360/CFG.scores.length)*Math.PI/180;
+const el=(tag,cls,parent)=>{const n=document.createElement(tag); if(cls)n.className=cls; parent.appendChild(n); return n;};
+const dial=document.getElementById("dial");
+
+function dotStyle(score){
+  if(score===null) return {c:"#3f3f4a", s:12, glow:"none"};
+  if(score<=5)     return {c:"#ff4d1f", s:14, glow:"0 0 6px #ff4d1f99, 0 0 12px #ff4d1f55"};
+  if(score>=8)     return {c:"#eaeae7", s:12, glow:"0 0 4px #ffffff40"};
+  return             {c:"#cfcfcc", s:12, glow:"0 0 4px #ffffff2b"};
+}
+
+(function renderStatic(){
+  for(const rs of RING_SCORES){
+    const r=CFG.ri+rs*S, n=Math.max(12,Math.round(TAU*r/9));
+    for(let k=0;k<n;k++){
+      const a=k/n*TAU, d=el("div","dot ring-dot",dial);
+      d.style.background = rs===10 ? "#2e2e3a" : "#1f1f27";
+      d.style.left=(CX+r*Math.cos(a)-2)+"px"; d.style.top=(CY+r*Math.sin(a)-2)+"px";
+    }
+  }
+})();
+
+function renderDynamic(){
+  document.querySelectorAll(".dial .spoke-dot,.dial .score-dot,.dial .label").forEach(n=>n.remove());
+  const svg=document.querySelector(".score-svg");
+  const scored=[];
+  CFG.scores.forEach((it,i)=>{
+    const a=angleOf(i), ca=Math.cos(a), sa=Math.sin(a);
+    if(it.score!==null){
+      const r=CFG.ri+it.score*S;
+      scored.push([CX+r*ca, CY+r*sa]);
+      const st=dotStyle(it.score), d=el("div","dot score-dot",dial);
+      d.style.background=st.c; d.style.width=st.s+"px"; d.style.height=st.s+"px";
+      d.style.left=(CX+r*ca-st.s/2)+"px"; d.style.top=(CY+r*sa-st.s/2)+"px";
+      d.style.boxShadow=st.glow;
+    } else {
+      const r=CFG.ri+6*S, d=el("div","dot score-dot",dial);
+      d.style.background="#3f3f4a"; d.style.width="12px"; d.style.height="12px";
+      d.style.left=(CX+r*ca-6)+"px"; d.style.top=(CY+r*sa-6)+"px";
+    }
+    const flip=ca<0, aDeg=-90+i*360/CFG.scores.length;
+    const rot=flip ? aDeg-180 : aDeg;
+    const L=el("div","label"+(it.score!==null&&it.score<=5?" risk":""),dial);
+    L.textContent=it.label;
+    L.style.left=(CX+LABEL_R*ca)+"px"; L.style.top=(CY+LABEL_R*sa)+"px";
+    L.style.transform="translate(-50%,-50%) rotate("+rot+"deg)";
+  });
+  const path=document.getElementById("scorePath");
+  if(scored.length>=3){
+    path.setAttribute("d","M"+scored.map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" L ")+" Z");
+    path.style.display="";
+  } else { path.style.display="none"; }
+  const vals=CFG.scores.map(s=>s.score).filter(v=>v!==null);
+  document.getElementById("hubValue").textContent = vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : "?";
+}
+
+(function buildControls(){
+  const rows=document.getElementById("rows");
+  CFG.scores.forEach((it,i)=>{
+    const row=el("div","row",rows);
+    const name=el("div","name",row); name.textContent=it.label;
+    const slider=el("input",null,row); slider.type="range"; slider.min=0; slider.max=10; slider.step=1;
+    slider.value = it.score===null ? 5 : it.score;
+    const val=el("div","val",row);
+    const unk=el("label","unk",row);
+    const cb=el("input",null,unk); cb.type="checkbox"; cb.checked = it.score===null;
+    unk.append("?");
+    const sync=()=>{ val.textContent = it.score===null ? "?" : it.score; slider.disabled = it.score===null; };
+    slider.addEventListener("input",()=>{ it.score=+slider.value; cb.checked=false; sync(); renderDynamic(); });
+    cb.addEventListener("change",()=>{ it.score = cb.checked ? null : +slider.value; sync(); renderDynamic(); });
+    sync();
+  });
+})();
+
+renderDynamic();
+</script>
+</body>
+</html>
