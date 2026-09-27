@@ -25,6 +25,8 @@ A LED radar dial: each scoring criterion is a dot on a spoke — **distance from
 - `description.md` — this file
 
 ## Parametric HTML — view & interact
+**Live on GitHub Pages:** https://maksimzinovev.github.io/design-inspiration/radar/
+
 Open `dot-matrix-radar-parametric.html` in any browser (double-click; no server/build needed). Self-contained: all CSS/JS inline; the only external ref is the Google-Fonts **Doto** stylesheet (offline → system-font fallback, still fully functional).
 
 Two ways to change scores:
